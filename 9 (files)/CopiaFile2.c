@@ -1,18 +1,19 @@
 #include <stdio.h>
-#include <string.h>
-int main ()
-{
+
+int main() {
     FILE* file1 = fopen("testi/in.txt", "r");
     FILE* file2 = fopen("testi/out.txt", "w");
 
-    if (file1 == NULL || file2 == NULL) { //verifica che l'apertura del file sia corretta
+    // Verifica che l'apertura del file sia corretta
+    if (file1 == NULL || file2 == NULL) {
         perror("Errore durante apertura file");
         return 1;
     }
 
-    // Copia carattere per carattere
+    int carattere; // Dichiara la variabile per memorizzare il carattere letto
+
     while ((carattere = fgetc(file1)) != EOF) {
-        fputs(riga, file2); // copia il primo file nel secondo file
+        fputc(carattere, file2); // Copia il carattere dal primo file al secondo file
     }
 
     fclose(file1);

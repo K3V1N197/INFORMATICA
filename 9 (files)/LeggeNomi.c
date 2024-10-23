@@ -6,7 +6,7 @@ int main() {
 
     // Verifica che l'apertura dei file sia corretta
     if (file1 == NULL || file2 == NULL) {
-        perror("Errore durante l'apertura del file");
+        perror("Errore durante l'apertura del file");                                                                                                                                                   
         return 1;
     }
 
@@ -20,7 +20,7 @@ int main() {
     }
 
     // Chiusura dei file
-    fclose(file1);
+    fclose(file1);                                                                                                                          
     fclose(file2);
     return 0;
 }

@@ -1,47 +1,49 @@
 #include <stdio.h>
-#include <ctype.h>
 
 int main() {
-    FILE* file = fopen("Nomi.txt", "r");
+    FILE* file = fopen("testi/Nomi.txt", "r");
+    int carattere;
+    int conta_caratteri = 0, conta_parole = 0, conta_righe = 0;
+    int in_parola = 0;
+
     if (file == NULL) {
-        perror("Errore durante l'apertura del file");
+        perror("Errore durante apertura file");
         return 1;
     }
 
-    int carattere;
-    int numCaratteri = 0;
-    int numParole = 0;
-    int numRighe = 0;
-    int inParola = 0; // Flag per verificare se siamo in una parola
-
     while ((carattere = fgetc(file)) != EOF) {
-        // Conta i caratteri, escludendo spazi e tabulazioni
-        if (!isspace(carattere)) {
-            numCaratteri++;
-            if (!inParola) {
-                inParola = 1; // Inizia una nuova parola
-                numParole++;
+        // Controllo dei caratteri validi (non spazio, tab o a capo)
+        if (carattere != ' ' && carattere != '\t' && carattere != '\n') {
+            conta_caratteri++;  // Conta solo i caratteri non spazi
+
+            // Controlla se siamo in una parola
+            if (in_parola==0) {
+                conta_parole++;  // Nuova parola trovata
+                in_parola = 1;
             }
         } else {
-            inParola = 0; // Siamo fuori da una parola
-        }
+            // Se troviamo uno spazio, tabulazione o a capo, significa fine parola
+            in_parola = 0;
 
-        // Conta le righe
-        if (carattere == '\n') {
-            numRighe++;
+            // Conta le righe ogni volta che trova un newline
+            if (carattere == '\n') {
+                conta_righe++;
+            }
         }
     }
 
-    // Se il file non è vuoto, conta l'ultima riga
-    if (numCaratteri > 0) {
-        numRighe++;
+    // Se l'ultima riga non termina con '\n', conta la riga
+    if (conta_caratteri > 0 && carattere != '\n') {
+        conta_righe++;
     }
+
+    // Chiude il file
+    fclose(file);
 
     // Stampa i risultati
-    printf("Caratteri (senza spazi e tabulazioni): %d\n", numCaratteri);
-    printf("Parole: %d\n", numParole);
-    printf("Righe: %d\n", numRighe);
+    printf("Numero di caratteri (senza spazi, tabulazioni, a capo): %d\n", conta_caratteri);
+    printf("Numero di parole: %d\n", conta_parole);
+    printf("Numero di righe: %d\n", conta_righe);
 
-    fclose(file);
     return 0;
 }
