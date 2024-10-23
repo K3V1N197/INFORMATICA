@@ -10,14 +10,13 @@ int main() {
         return 1;
     }
 
-    int carattere;
-    // Legge carattere per carattere fino a EOF
-    while ((carattere = fgetc(file1)) != EOF) {
-          // Converte la riga in maiuscolo
-        for (int i = 0; riga[i] != '\0'; i++) {
-            riga[i] -= 32;
+    char riga[100]; // Array per memorizzare la riga
+    while (fgets(riga, sizeof(riga), file1) != NULL) {
+        // Converte la riga in maiuscolo
+        for (int i = 0; i<100; i++) {
+            if (riga[i] >= 'a' && riga[i] <= 'z') riga[i] -= 32;
         }
-        fputc(carattere, file2);
+        fputs(riga, file2); // Scrive la riga nel file di output
     }
 
     // Chiusura dei file
