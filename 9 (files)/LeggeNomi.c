@@ -13,10 +13,7 @@ int main() {
 int carattere; // Dichiara la variabile per memorizzare il carattere letto
 
     while ((carattere = fgetc(file1)) != EOF) {
-        // Converte la riga in maiuscolo
-        for (int i = 0; i<100; i++) {
-            if (carattere >= 'a' && carattere <= 'z') carattere -= 32;
-        }
+        if (carattere >= 'a' && carattere <= 'z') carattere -= 32;
         fputc(carattere, file2); // Scrive la riga nel file di output
     }
 
