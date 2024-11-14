@@ -2,7 +2,7 @@
 
 int main() {
     FILE* file = fopen("testi/Nomi.txt", "r");
-    int carattere;
+    
     int conta_caratteri = 0, conta_parole = 0, conta_righe = 0;
     int in_parola = 0;
 
@@ -10,7 +10,7 @@ int main() {
         perror("Errore durante apertura file");
         return 1;
     }
-
+    int carattere;
     while ((carattere = fgetc(file)) != EOF) {
         // Controllo dei caratteri validi (non spazio, tab o a capo)
         if (carattere != ' ' && carattere != '\t' && carattere != '\n') {
