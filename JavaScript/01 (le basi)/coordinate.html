@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>Coordinate</title>
+</head>
+<body>
+
+    <h1>Determina le coordinate y dei punti con ascissa -1 e 10 e i punti di intersezione con gli assi cartesiani</h1>
+
+    <script>
+    let x1 = -1;
+    let x2 = 10;
+    // Acquisisci i coefficienti m e c dall'utente
+    let m = prompt("Inserisci il coefficiente m:");
+    let c = prompt("Inserisci il coefficiente c:");
+
+    // Calcola le coordinate per x = -1 e x = 10
+    let m1 = m*x1;
+    let m2 = m*x2;
+    let y1 = m1*1+c*1;
+    let y2 = m2*2+c*1;
+
+    // Mostra i risultati
+    console.log("Il primo punto con ascissa -1 è: (" + x1 + ", " + y1 + ")");
+    console.log("Il secondo punto con ascissa 10 è: (" + x2 + ", " + y2 + ")");
+
+    </script>
+</body>
+</html>
