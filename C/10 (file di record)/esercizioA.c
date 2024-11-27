@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define NUM_STUDENTI 10
+#define NUM_STUDENTI 2
 
 typedef struct {
     char cognome[25];
@@ -12,6 +12,7 @@ void salvaSuFile(char NomeFile[]);
 void caricaDaFile(char NomeFile[]);
 int trovaCognome(char NomeFile[], char cognomeInserito[]);
 void stampaDettagli(char NomeFile[]);
+
 
 int main() {
     char cognomeInserito[25];
@@ -42,18 +43,18 @@ void salvaSuFile(char NomeFile[]) {
         return;
     }
 
-    Studente studenti[NUM_STUDENTI];
+    Studente buffer;
 
     for (int i = 0; i < NUM_STUDENTI; i++) {
         printf("Inserisci il cognome dello studente %d: ", i + 1);
-        scanf("%s", studenti[i].cognome);
+        scanf("%s", buffer.cognome);
         
         for (int j = 0; j < 3; j++) {
             printf("Inserisci il voto #%d: ", j + 1);
-            scanf("%d", &studenti[i].voti[j]);
+            scanf("%d", &buffer.voti[j]);
         }
 
-        fwrite(&studenti[i], sizeof(Studente), 1, file);
+        fwrite(&buffer, sizeof(Studente), 1, file);
     }
 
     fclose(file);
