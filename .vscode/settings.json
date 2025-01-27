@@ -1,6 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
-        "eserciziob": "cpp"
+        "eserciziob": "cpp",
+        "rettangolo": "cpp"
     }
 }
