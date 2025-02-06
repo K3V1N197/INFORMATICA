@@ -23,7 +23,6 @@ class rettangolo {
         double getDiagonale();
 
         void stampa();
-    
 }; 
 
 #endif

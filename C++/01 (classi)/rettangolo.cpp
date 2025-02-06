@@ -15,10 +15,11 @@ public:
         : base(base), altezza(altezza) {}
 
     // Distruttore
-    ~Rettangolo() {
+    ~Rettangolo()
+    {
         cout << "Hai chiamato il distruttore." << endl;
     }
-    
+
     void setBase(double x) { base = x; }
     void setAltezza(double x) { altezza = x; }
     double getBase() { return base; }
@@ -42,7 +43,7 @@ private:
 
 int main()
 {
-    Rettangolo r1(5,10);
+    Rettangolo r1(5, 10);
 
     r1.stampa();
 

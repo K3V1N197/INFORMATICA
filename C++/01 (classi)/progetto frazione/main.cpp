@@ -5,7 +5,6 @@ using namespace std;
 
 int main()
 {
-
     int numeratore, denominatore;
 
     cout << "Numeratore : " << endl;
