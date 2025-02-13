@@ -21,12 +21,12 @@ void carica (int v[])
     scanf("%d", p);
     }
 }
-
+#
 void stampa (int v[])
 {
     int *p;
     for (p=v; p-v < N; p++){
-    printf("%d ", *p);
+    printf("%d ", *p); 
     }
 }
 int maggiore (int v[])
