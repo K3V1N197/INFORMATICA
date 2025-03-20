@@ -21,7 +21,7 @@ void carica (int v[])
     scanf("%d", p);
     }
 }
-#
+
 void stampa (int v[])
 {
     int *p;
