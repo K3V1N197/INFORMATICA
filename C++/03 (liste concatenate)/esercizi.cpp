@@ -4,10 +4,8 @@ using namespace std;
 
 typedef struct Nodo
 {
-
   int info;
   Nodo *next;
-
 } Nodo;
 
 Nodo *Inserimentointesta(Nodo *s, int);
@@ -17,7 +15,7 @@ Nodo *Cancellazioneintesta(Nodo *s);
 Nodo *Cancellazioneincoda(Nodo *s);
 Nodo *Ricerca(Nodo *s, int);
 int Conta(Nodo *s);
-/*void Rimuoviduplicati(Nodo *s);  */
+void Rimuoviduplicati(Nodo *s);  
 
 int main()
 {
@@ -42,6 +40,10 @@ int main()
 
   int Cont = Conta(s);
   cout << "Numero volte dei nodi : " << Cont << endl;
+
+   cout << "Numeri duplicati eliminati : " << endl;
+   Rimuoviduplicati(s);
+   Stampa(s); 
 
   cout << "Cancellazione in testa : " << endl;
   s = Cancellazioneintesta(s);
@@ -212,12 +214,12 @@ int Conta(Nodo *s)
   return cont;
 }
 
-/*void Rimuoviduplicati(Nodo *s)
+void Rimuoviduplicati(Nodo *s)
 {
   Nodo *aux = s;
 
   while(aux != nullptr)
-  {
+  {       
     Nodo *prev = aux -> next;
     while(prev != nullptr)
     {
@@ -233,8 +235,7 @@ int Conta(Nodo *s)
         prev = prev ->next;
       }
     }
+    aux = aux ->next;
   }
-  aux = aux ->next;
 }
 
-*/
