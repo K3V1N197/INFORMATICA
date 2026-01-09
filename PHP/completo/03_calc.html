@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calcolatrice</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h2>Calcolatrice</h2>
+
+    <form action="03_calc.php" method="post">
+      <label for="num1">Numero 1</label>
+      <input type="number" step="any" name="num1" placeholder="Inserisci il primo numero.."><br>
+
+      <label for="num2">Numero 2</label>
+      <input type="number" step="any" name="num2" placeholder="Inserisci il secondo numero.."><br>
+
+      <label for="operazione">Operazione</label>
+      <select name="operazione">
+        <option value="somma">Somma (+)</option>
+        <option value="differenza">Differenza (-)</option>
+        <option value="prodotto">Prodotto (×)</option>
+        <option value="divisione">Divisione (÷)</option>
+      </select>
+
+      <br><br>
+      <input type="submit" value="Calcola">
+    </form>
+  </body>
+</html>

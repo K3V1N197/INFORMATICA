@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci Studente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Inserisci Nuovo Studente</h1>
+        
+        <form action="01_studenti.php" method="POST">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="cognome">Cognome</label>
+            <input type="text" id="cognome" name="cognome" required>
+            
+            <label for="data_nascita">Data di Nascita</label>
+            <input type="date" id="data_nascita" name="data_nascita" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <input type="submit" value="Inserisci Studente">
+        </form>
+    </div>
+</body>
+</html>
