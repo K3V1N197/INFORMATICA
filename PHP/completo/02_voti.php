@@ -33,7 +33,7 @@ switch ($co) {
         $sql = "SELECT s.nome, s.cognome, v.voto
             FROM studenti AS s
             JOIN valutazioni AS v ON s.id_studente = v.id_studente
-            WHERE s.cognome LIKE '%hanafi%'";
+            WHERE s.cognome LIKE '%panetta%'";
     break;
 
     default:
