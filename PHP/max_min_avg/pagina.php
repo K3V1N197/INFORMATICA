@@ -11,7 +11,7 @@ $sql = "SELECT s.nome, s.cognome,
                MIN(v.voto) as minimo
         FROM studenti s
         JOIN valutazioni v ON s.id_studente = v.id_studente
-        GROUP BY s.id_studente, s.nome, s.cognome
+        GROUP BY s.id_studente
         ORDER BY s.cognome, s.nome";
 
 $result = $conn->query($sql);
